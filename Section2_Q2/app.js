@@ -3,10 +3,12 @@ const app = express();
 const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const User = require('./models/User')
+const User = require('./models/User');
+const dbConnect = require('./dbConfig');
 
 dotenv.config();
 app.use(express.json());
+dbConnect()
 
 
 const PORT = process.env.PORT || 3000;
